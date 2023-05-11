@@ -3,12 +3,12 @@ import { PropTypes } from 'prop-types'
 import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 
 
-export const Login = ({handleOnChange , handleOnSubmit, fromSwitcher, email,pass}) => {
+export const Login = ({handleOnChange , handleOnSubmit, fromSwitcher, email,pass , loginPerson}) => {
     return (
         <Container>
             <Row>
                 <Col>
-                    <h1 className='text-info text-center'>Client Login</h1>
+                    <h1 className='text-info text-center'>{loginPerson}</h1>
                     <hr />
                     <Form autoComplete='off' onSubmit={handleOnSubmit}>
                         <Form.Group>

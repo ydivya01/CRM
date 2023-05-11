@@ -1,7 +1,7 @@
 import React from 'react'
 import './Entry.style.css'
 import { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import { Login } from '../../Component/Login';
 import { PasswordReset } from '../../Component/Passwordreset'
 
@@ -54,7 +54,26 @@ export const Entry = () => {
 
 
         <div className='entry-page bg-info'>
-            <Card className='box-style'>
+            <Row>
+                <Card className='box-style'>
+                    Admin
+                    {formLoad === "login" &&
+                        <Login
+                            handleOnChange={handleOnChange}
+                            handleOnSubmit={handleOnSubmit}
+                            fromSwitcher={fromSwitcher}
+                            email={email}
+                            pass={password} />}
+                    {formLoad === "reset" &&
+                        <PasswordReset
+                            handleOnChange={handleOnChange}
+                            handleOnResetSubmit={handleOnResetSubmit}
+                            fromSwitcher={fromSwitcher}
+                            email={email} />}
+
+
+                </Card>
+                {/* <Card className='box-style'>
                 {formLoad === "login" &&
                     <Login
                         handleOnChange={handleOnChange}
@@ -69,6 +88,23 @@ export const Entry = () => {
                         fromSwitcher={fromSwitcher}
                         email={email} />}
             </Card>
+            <Card className='box-style'>
+                {formLoad === "login" &&
+                    <Login
+                        handleOnChange={handleOnChange}
+                        handleOnSubmit={handleOnSubmit}
+                        fromSwitcher={fromSwitcher}
+                        email={email}
+                        pass={password} />}
+                {formLoad === "reset" &&
+                    <PasswordReset
+                        handleOnChange={handleOnChange}
+                        handleOnResetSubmit={handleOnResetSubmit}
+                        fromSwitcher={fromSwitcher}
+                        email={email} />}
+            </Card> */}
+            </Row>
+
         </div>
 
 
