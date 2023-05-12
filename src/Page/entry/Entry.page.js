@@ -1,7 +1,7 @@
 import React from 'react'
 import './Entry.style.css'
 import { useState } from 'react';
-import { Card, Row } from 'react-bootstrap';
+import { Card, Container, Row , CardGroup} from 'react-bootstrap';
 import { Login } from '../../Component/Login';
 import { PasswordReset } from '../../Component/Passwordreset'
 
@@ -53,10 +53,11 @@ export const Entry = () => {
     return (
 
 
-        <div className='entry-page bg-info'>
-            <Row>
+       
+            <Row className='entry-page bg-info'>
+            <Container >
                 <Card className='box-style'>
-                    Admin
+                <h1 className='text-info text-center'>Admin</h1>
                     {formLoad === "login" &&
                         <Login
                             handleOnChange={handleOnChange}
@@ -70,47 +71,27 @@ export const Entry = () => {
                             handleOnResetSubmit={handleOnResetSubmit}
                             fromSwitcher={fromSwitcher}
                             email={email} />}
-
-
                 </Card>
-                {/* <Card className='box-style'>
-                {formLoad === "login" &&
-                    <Login
-                        handleOnChange={handleOnChange}
-                        handleOnSubmit={handleOnSubmit}
-                        fromSwitcher={fromSwitcher}
-                        email={email}
-                        pass={password} />}
-                {formLoad === "reset" &&
-                    <PasswordReset
-                        handleOnChange={handleOnChange}
-                        handleOnResetSubmit={handleOnResetSubmit}
-                        fromSwitcher={fromSwitcher}
-                        email={email} />}
-            </Card>
-            <Card className='box-style'>
-                {formLoad === "login" &&
-                    <Login
-                        handleOnChange={handleOnChange}
-                        handleOnSubmit={handleOnSubmit}
-                        fromSwitcher={fromSwitcher}
-                        email={email}
-                        pass={password} />}
-                {formLoad === "reset" &&
-                    <PasswordReset
-                        handleOnChange={handleOnChange}
-                        handleOnResetSubmit={handleOnResetSubmit}
-                        fromSwitcher={fromSwitcher}
-                        email={email} />}
-            </Card> */}
-            </Row>
 
-        </div>
+               
+
+            
+
+        
+        </Container>
+        </Row>
 
 
 
 
-
-    )
+    
+  );
 }
 
+
+
+
+
+
+
+  
